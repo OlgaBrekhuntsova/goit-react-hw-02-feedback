@@ -1,6 +1,6 @@
-import './App.css';
+// import './App.css';
 
-const App = () => {
+// const App = () => {
   return (
     <div className="App">
 
@@ -8,4 +8,4 @@ const App = () => {
   );
 }
 
-// export default App;
+export default App;
