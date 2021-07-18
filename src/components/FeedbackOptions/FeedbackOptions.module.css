@@ -1,0 +1,19 @@
+.btn {
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+}
+.btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.btnGood {
+  background-color: green;
+}
+.btnNeutral {
+  background-color: grey;
+}
+.btnBad {
+  background-color: tomato;
+}
