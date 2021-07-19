@@ -1,26 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import styles from './FeedbackOptions.module.css';
-import classNames from 'classnames';
-class FeedbackOptions extends Component {
-    // state:
-    //     options, onLeaveFeedback;
+// import classNames from 'classnames';
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     
-    // static defaultProps = {};
-
-    static propTypes = {
-    onLeaveFeedback: PropTypes.func.isRequired,
-  options: PropTypes.string.isRequired,
-};
-    onLeaveFeedback = ()=>{ console.log('clicked')};
-    render() {
-        const { onLeaveFeedback, options } = this.props;
-        return (
-            <div>
-                <button type="button" className={classNames(styles.btn, styles.btnGood)} onClick={() => { this.onLeaveFeedback() }}>Good</button>
-                <button type="button" className={classNames(styles.btn, styles.btnNeutral)}>Neutral</button>
-                <button type="button" className={classNames(styles.btn, styles.btnBad)}>Bad</button>
-            </div>);
+         return (
+        <ul className={styles.buttonList}>
+            {options.map(({ label}) => (
+                <li key={label} className={ styles.btnItem}>
+                    <button type="button" className={styles.btn} data_content={label} onClick={onLeaveFeedback}>{label}</button>
+        </li>))
+            }
+               </ul>);
     };
- };
+ FeedbackOptions.propTypes = {
+    onLeaveFeedback: PropTypes.func.isRequired,
+options: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+})).isRequired,
+    };
 export default FeedbackOptions;

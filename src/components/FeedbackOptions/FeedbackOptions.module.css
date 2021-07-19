@@ -1,19 +1,46 @@
+.buttonList {
+  display: flex;
+  justify-content: center;
+}
+
 .btn {
   border-radius: 4px;
   color: white;
   font-weight: 500;
   padding: 10px;
 }
-.btn:not(:last-child) {
+.btnItem:not(:last-child) {
   margin-right: 10px;
 }
-
-.btnGood {
+.btn:hover,
+.btn:focus {
+  transition-duration: 0.4s;
+  box-shadow: 2px 2px 2px 2px rgba(62, 65, 66, 0.2);
+}
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 1px 1px 1px 1px rgba(62, 65, 66, 0.2);
+}
+button[data_content='Good'] {
   background-color: green;
 }
-.btnNeutral {
+button[data_content='Good']:hover {
+  background-color: rgb(1, 95, 1);
+  transition-duration: 0.4s;
+}
+
+button[data_content='Neutral'] {
   background-color: grey;
 }
-.btnBad {
+button[data_content='Neutral']:hover {
+  transition-duration: 0.4s;
+  background-color: rgb(71, 70, 70);
+}
+
+button[data_content='Bad'] {
   background-color: tomato;
+}
+button[data_content='Bad']:hover {
+  transition-duration: 0.4s;
+  background-color: rgb(207, 81, 58);
 }
