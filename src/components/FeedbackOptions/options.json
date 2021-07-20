@@ -1,6 +1,6 @@
 [
-  { "label": "Good" },
-  { "label": "Neutral" },
-  { "label": "Bad" }
+  { "label": "Good", "bgC": "green", "bgCHover": "rgb(1, 95, 1)" },
+  { "label": "Neutral", "bgC": "grey", "bgCHover": "rgb(71, 70, 70)" },
+  { "label": "Bad", "bgC": "tomato", "bgCHover": "rgb(207, 81, 58)" }
 ]
 
