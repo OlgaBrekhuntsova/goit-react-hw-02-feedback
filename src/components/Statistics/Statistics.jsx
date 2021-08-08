@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Statistics.module.css';
 
 class Statistics extends Component {
-     static defaultProps = {
+  static defaultProps = {
     total:0,
     positivePercentage:"No data",
 };
@@ -20,7 +20,7 @@ static propTypes = {
     render() {
         const { good, neutral, bad, total, positivePercentage } = this.props;
         
-      return (<ul>
+      return (<ul className={styles.statisticsList}>
           <li>Good: <span className={styles.dataStatistics}>{good}</span></li>
           <li>Neutral: <span className={styles.dataStatistics}>{neutral}</span></li>
           <li>Bad: <span className={styles.dataStatistics}>{bad}</span></li>

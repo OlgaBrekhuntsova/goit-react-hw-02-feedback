@@ -6,24 +6,33 @@ import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
 import buttonList from './components/FeedbackOptions/options.json';
 import Notification from './components/Notification/Notification';
 class App extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  static defaultProps = {
+    initialGood: 0,
+    initialBad: 0,
+    initialNeutral: 0,
   };
+
+  // static propTypes = {
+  //   good: PropTypes.number.isRequired,
+  //   neutral: PropTypes.number.isRequired,
+  //   bad: PropTypes.number.isRequired,
+  //   };
+  state = {
+    good: this.props.initialGood,
+    neutral: this.props.initialNeutral,
+    bad: this.props.initialBad,
+  };
+
   onLeaveFeedback = event => {
     switch (event.target.attributes.data_content.value) {
       case 'Good':
-        const prevGood = this.state.good;
-        this.setState({ good: prevGood + 1 });
+        this.setState(prevState => ({ good: prevState.good + 1 }));
         break;
       case 'Bad':
-        const prevBad = this.state.bad;
-        this.setState({ bad: prevBad + 1 });
+        this.setState(prevState => ({ bad: prevState.bad + 1 }));
         break;
       default:
-        const prevNeutral = this.state.neutral;
-        this.setState({ neutral: prevNeutral + 1 });
+        this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
     }
   };
   countTotalFeedback() {
